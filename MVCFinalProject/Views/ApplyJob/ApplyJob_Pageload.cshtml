@@ -1,0 +1,49 @@
+﻿@model MVCFinalProject.Models.ApplyJobCls
+@{
+    ViewBag.Title = "ApplyJob_Pageload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Apply Job</h2>
+<div>
+    @using (Html.BeginForm("Apply_InsertClick", "ApplyJob", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div>
+            <label>Apply Job Id:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.ajobid)
+        </div>
+        <div>
+            <label>User Id:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.uid)
+        </div>
+        <div>
+            <label>Company Id:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.cid)
+        </div>
+        <div>
+            <label>Resume:</label>
+        </div>
+        <div>
+            @Html.TextBox("file", "", new { Type = "file" })
+        </div>
+        <div>
+            <label>Apply Date:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.adt)
+        </div>
+
+        <div>
+            <input type="submit" value="Insert" />
+            @Html.DisplayFor(m => m.amsg)
+        </div>
+    }
+</div>
+
+

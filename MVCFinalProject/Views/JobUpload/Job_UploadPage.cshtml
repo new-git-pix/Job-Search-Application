@@ -1,0 +1,81 @@
+﻿@model MVCFinalProject.Models.JobInsertCls
+@{
+    ViewBag.Title = "Job_UploadPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Job Upload</h2>
+<div>
+    @using (Html.BeginForm("Job_InsertClick", "JobUpload", FormMethod.Post))
+    {
+        <div>
+            <label>Company Id:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.cid)
+        </div>
+        <div>
+            <label>Job Title:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.title)
+        </div>
+        <div>
+            <label>Job Description:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.description)
+        </div>
+        <div>
+            <label>Job Type:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.type)
+        </div>
+        <div>
+            <label>Job Skills:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.skills)
+        </div>
+        <div>
+            <label>Job Location:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.location)
+        </div>
+        <div>
+            <label>Job Salary:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.salary)
+        </div>
+        <div>
+            <label>Job Vacancies:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.vacancy)
+        </div>
+        <div>
+            <label>Job Experience:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.experience)
+        </div>
+        <div>
+            <label>Last Date To Apply:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.lastdate)
+        </div>
+
+        <div>
+            <input type="submit" value="Insert" />
+            @Html.DisplayFor(m => m.jobmsg)
+        </div>
+    }
+</div>
+
+
+
+

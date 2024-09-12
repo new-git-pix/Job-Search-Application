@@ -1,0 +1,73 @@
+﻿@model MVCFinalProject.Models.AdminInsertCls
+@{
+    ViewBag.Title = "AdminInsert_Pageload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Admin Registration</h2>
+<div>
+    @using (Html.BeginForm("AdminInsert_Click", "AdminReg", FormMethod.Post))
+    {
+        <div>
+            <label>Id:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.id)
+        </div>
+        <div>
+            <label>Name:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.name)
+            @Html.ValidationMessageFor(m => m.name)
+        </div>
+        <div>
+            <label>Email:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.email)
+            @Html.ValidationMessageFor(m => m.email)
+        </div>
+        <div>
+            <label>Phone:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.phone)
+            @Html.ValidationMessageFor(m => m.phone)
+        </div>
+        <div>
+            <label>Website Address:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.webaddress)
+        </div>
+        <div>
+            <label>Username:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.username)
+        </div>
+        <div>
+            <label>Password:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.password)
+        </div>
+        <div>
+            <label>Confirm Password:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.cpassword)
+            @Html.ValidationMessageFor(m => m.cpassword)
+        </div>
+        <div>
+            <input type="submit" value="Insert" />
+            @Html.DisplayFor(m => m.adminmsg)
+        </div>
+    }
+</div>
+
+
+
+
+
